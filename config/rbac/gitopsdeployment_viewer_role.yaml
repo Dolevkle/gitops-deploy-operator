@@ -1,0 +1,23 @@
+# permissions for end users to view gitopsdeployments.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: gitops-deploy-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: gitopsdeployment-viewer-role
+rules:
+- apiGroups:
+  - gitops.example.com
+  resources:
+  - gitopsdeployments
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - gitops.example.com
+  resources:
+  - gitopsdeployments/status
+  verbs:
+  - get

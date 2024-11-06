@@ -1,0 +1,9 @@
+apiVersion: gitops.example.com/v1alpha1
+kind: GitOpsDeployment
+metadata:
+  labels:
+    app.kubernetes.io/name: gitops-deploy-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: gitopsdeployment-sample
+spec:
+  # TODO(user): Add fields here
